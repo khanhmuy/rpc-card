@@ -5,21 +5,37 @@
 
         <script src="script.js"></script>
         <script src="https://cdn.tailwindcss.com"></script>
+
+        <link href="output.css" rel="stylesheet">
     </head>
-    <body class="text-white" onload="fetchLanyard(); setInterval(fetchLanyard, 3000)" style="background-color: #1e1e2e;">
+    <body class="text-white" onload="fetchLanyard(); setInterval(fetchLanyard, 10000)" style="background-color: #1e1e2e;">
         <div>
-            <div style="transition: opacity 400ms ease 0s, transform 400ms ease 0s; transform: none; opacity: 1;">
-                <a href="https://discord.com/users/272388882539085824" rel="noopener noreferrer" class="focus:outline-none transition duration-300 ease-in-out transform p-3 rounded-md border border-gray-800 shadow flex flex-row max-w-xl" id="discordBox" target="_blank" style="background-color: #1e1e2e;">
-                    <span style="box-sizing: border-box; display: inline-block; overflow: hidden; width: 45px; height: 45px; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;">
-                        <img src="https://api.lanyard.rest/272388882539085824.png" class="w-full h-full rounded shadow w-45 h-45" style="display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; width: 45px; height: 45px" id="pfp">
+            <div style="transition: opacity 400ms ease 0s, transform 400ms ease 0s; transform: none; opacity: 1;" class="inter">
+                <a href="https://discord.com/users/272388882539085824" rel="noopener noreferrer" class="focus:outline-none transition duration-300 ease-in-out transform transform-gpu p-3 rounded-lg border-2 border-surface0-dark dark:border-surface0-light shadow drop-shadow-md flex flex-row max-w-xl animate-pulse" id="discordBox" target="_blank">
+                    <span style="box-sizing: border-box; display: inline-block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;">
+                        <span style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;" class="w-45 h-45"> 
+                            <img src="https://api.lanyard.rest/272388882539085824.png" class="w-full h-full rounded shadow w-45 h-45" style="display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 45px; max-height: 45px" id="pfp">
+                        </span>
                     </span>
                     <div class="my-auto ml-3">
                         <div class="font-semibold text-sm">
                             <span id="discordUser"></span> - <span id="discordStatus">Fetching...</span>
                         </div>
                         <p class="text-xs" id="customStatus"></p>
-                        <p class="text-xs" id="spotify" style="display: none;">Listening to: <span id="track" class="font-semibold"></span> by <span id="artist" class="font-semibold"></span></span></p>
-                        <p class="text-xs" id="vscode" style="display: none;"><span>Workspace: </span><span id="workspace" class="font-semibold"></span> - Editing <span id="file" class="font-semibold"></span></p>
+                        <p class="text-xs" id="spotify" style="display: none;">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="fill-current h-[1.1em] inline align-middle" viewBox="0 0 16 16">
+                                <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.669 11.538a.498.498 0 0 1-.686.165c-1.879-1.147-4.243-1.407-7.028-.77a.499.499 0 0 1-.222-.973c3.048-.696 5.662-.397 7.77.892a.5.5 0 0 1 .166.686zm.979-2.178a.624.624 0 0 1-.858.205c-2.15-1.321-5.428-1.704-7.972-.932a.625.625 0 0 1-.362-1.194c2.905-.881 6.517-.454 8.986 1.063a.624.624 0 0 1 .206.858zm.084-2.268C10.154 5.56 5.9 5.419 3.438 6.166a.748.748 0 1 1-.434-1.432c2.825-.857 7.523-.692 10.492 1.07a.747.747 0 1 1-.764 1.288z"/>
+                            </svg>
+                            <span id="track" class="font-semibold"></span> by <span id="artist" class="font-semibold"></span>
+                        </p>
+                        <p class="text-xs" id="jellyfin" style="display: none;"></p>
+                        <p class="text-xs" id="ytmusic" style="display: none;"></p>
+                        <p class="text-xs" id="vscode" style="display: none;">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="fill-current h-[1.1em] inline align-middle" viewBox="0 0 32 32">
+                                <path d="m11.72 18.685l-6.883 5.184L2 22.922L9 16L2 9.077l2.837-.947l6.883 5.184l11.433-11.3L30 4.922v22.155l-6.847 2.909ZM15.287 16l7.865 5.923V10.076Z"></path>
+                            </svg>
+                            <span>Workspace: </span><span id="workspace" class="font-semibold"></span> - Editing <span id="file" class="font-semibold"></span>
+                        </p>
                     </div>
                 </a>
             </div>
